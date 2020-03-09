@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint -f codeframe --ext .js,.ts,.tsx src/",
     "fmt": "prettier --write 'src/**/*.{ts,tsx,json,css}'",
     "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css}'"
   },

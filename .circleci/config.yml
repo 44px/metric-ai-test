@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12
+    branches:
+      ignore:
+        - gh-pages
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install dependencies
+          command: yarn install --frozen-lockfile
+
+      - save_cache:
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Check style
+          command: yarn fmt-check
+
+      - run:
+          name: Lint
+          command: yarn lint
+
+      - run:
+          name: Test
+          command: yarn test
