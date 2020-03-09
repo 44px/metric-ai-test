@@ -2,6 +2,7 @@
   "name": "metric-ai-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://44px.github.io/metric-ai-test",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
     "@testing-library/jest-dom": "^4.2.4",
@@ -23,6 +24,7 @@
     "typescript": "~3.7.2"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
   "scripts": {
@@ -32,7 +34,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint -f codeframe --ext .js,.ts,.tsx src/",
     "fmt": "prettier --write 'src/**/*.{ts,tsx,json,css}'",
-    "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css}'"
+    "fmt-check": "prettier --list-different 'src/**/*.{ts,tsx,json,css}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
