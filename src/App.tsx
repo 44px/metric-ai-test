@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { format, subDays } from 'date-fns';
 import { gql, NetworkStatus } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
-import { Balance, getBalanceTimeline } from './balance/timeline';
+import { getBalanceTimeline } from './balance/timeline';
 import { Chart } from './balance/Chart';
 import { DatePicker } from './ui/DatePicker';
 import { Button } from './ui/Button';
@@ -25,7 +25,6 @@ const initialDate = format(subDays(new Date(), 7), 'yyyy-MM-dd');
 
 function App() {
   const [fromDate, setFromDate] = useState(initialDate);
-  const [balanceTimeline, setBalanceTimeline] = useState<Balance[]>([]);
   const { loading, error, data, refetch, networkStatus } = useQuery(
     GET_TRANSACTIONS,
     {
@@ -33,13 +32,8 @@ function App() {
       notifyOnNetworkStatusChange: true,
     },
   );
-  useEffect(() => {
-    if (networkStatus === NetworkStatus.ready) {
-      setBalanceTimeline(getBalanceTimeline(data.transactions));
-    } else {
-      setBalanceTimeline([]);
-    }
-  }, [networkStatus, data, setBalanceTimeline]);
+  const balanceTimeline = getBalanceTimeline(data?.transactions || []);
+  const isLoading = loading || networkStatus === NetworkStatus.refetch;
 
   return (
     <div className="App">
@@ -53,10 +47,15 @@ function App() {
         </div>
       </div>
       <div className="App__view">
-        {loading && <div className="App__view-overlay">Loading</div>}
+        {isLoading && (
+          <div className="App__overlay">
+            <div className="App__overlay-title">Loading</div>
+            <div className="App__loader">&nbsp;</div>
+          </div>
+        )}
         {error && (
-          <div className="App__view-overlay">
-            <div>Error</div>
+          <div className="App__overlay">
+            <div className="App__overlay-title">Error</div>
             <span>{error.message}</span>
           </div>
         )}
