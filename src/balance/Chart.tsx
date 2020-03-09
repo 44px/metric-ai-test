@@ -10,6 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 import { Balance } from './timeline';
+import './Chart.css';
 
 interface Props {
   data: Balance[];
@@ -17,7 +18,7 @@ interface Props {
 
 export const Chart: React.FunctionComponent<Props> = ({ data }) => {
   return (
-    <ResponsiveContainer width="100%" aspect={1.8}>
+    <ResponsiveContainer className="Chart" width="100%" aspect={1.8}>
       <LineChart margin={{ top: 8, left: 4, right: 16, bottom: 8 }} data={data}>
         <Line type="linear" dataKey="total" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />

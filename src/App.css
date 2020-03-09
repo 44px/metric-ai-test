@@ -2,3 +2,37 @@
   margin: 40px auto;
   max-width: 800px;
 }
+
+.App__toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 16px 4px 60px;
+}
+
+.App__toolbar-element + .App__toolbar-element {
+  margin-left: 16px;
+}
+
+.App__toolbar-label {
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+
+.App__view {
+  position: relative;
+}
+
+.App__view-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 1;
+}

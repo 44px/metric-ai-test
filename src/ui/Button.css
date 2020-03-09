@@ -1,0 +1,19 @@
+.Button {
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: 0 0 1px 0 #ccc;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: #f5f5f5;
+  box-shadow: 0 0 1px 0 #aaa;
+}
+
+.Button:active {
+  background: #ddd;
+  box-shadow: 0 0 1px 0 #888;
+}
