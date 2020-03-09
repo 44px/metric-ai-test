@@ -23,7 +23,7 @@ describe('getBalanceTimeline', () => {
       ]),
     ).toEqual([
       {
-        date: '2020-01-05',
+        date: 1578182400000,
         total: 300.5,
         accounts: {
           'Bank of Hawaii': 100.5,
@@ -55,7 +55,7 @@ describe('getBalanceTimeline', () => {
       ]),
     ).toEqual([
       {
-        date: '2020-01-06',
+        date: 1578268800000,
         total: 300.25,
         accounts: {
           'Bank of Hawaii': 300.25,
@@ -86,7 +86,7 @@ describe('getBalanceTimeline', () => {
       ]),
     ).toEqual([
       {
-        date: '2020-01-05',
+        date: 1578182400000,
         total: 29.25,
         accounts: {
           'Bank of Hawaii': 29.25,
@@ -125,7 +125,7 @@ describe('getBalanceTimeline', () => {
       ]),
     ).toEqual([
       {
-        date: '2020-01-05',
+        date: 1578182400000,
         total: 2568.75,
         accounts: {
           'Bank of Hawaii': 2568.75,
@@ -181,7 +181,7 @@ describe('getBalanceTimeline', () => {
       ]),
     ).toEqual([
       {
-        date: '2020-01-05',
+        date: 1578182400000,
         total: 300,
         accounts: {
           'Bank of Hawaii': 100,
@@ -189,7 +189,7 @@ describe('getBalanceTimeline', () => {
         },
       },
       {
-        date: '2020-01-06',
+        date: 1578268800000,
         total: 290,
         accounts: {
           'Bank of Hawaii': 100,
@@ -197,7 +197,7 @@ describe('getBalanceTimeline', () => {
         },
       },
       {
-        date: '2020-01-08',
+        date: 1578441600000,
         total: 5290,
         accounts: {
           'Bank of Hawaii': 100,
@@ -205,7 +205,7 @@ describe('getBalanceTimeline', () => {
         },
       },
       {
-        date: '2020-01-09',
+        date: 1578528000000,
         total: 5290,
         accounts: {
           'Bank of Hawaii': 1100,

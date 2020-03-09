@@ -20,8 +20,8 @@ type Transfer = Pick<
 
 type BalanceByAccount = Record<string, number>;
 
-interface Balance {
-  date: string;
+export interface Balance {
+  date: number;
   total: number;
   accounts: BalanceByAccount;
 }
@@ -31,7 +31,11 @@ export const getBalanceTimeline = (transactions: Transaction[]): Balance[] => {
     return [];
   }
 
-  const startBalance = { date: transactions[0].date, total: 0, accounts: {} };
+  const startBalance = {
+    date: Date.parse(transactions[0].date),
+    total: 0,
+    accounts: {},
+  };
   return transactions.reduce(
     (balanceTimeline, transaction) => {
       const currentBalance = balanceTimeline[balanceTimeline.length - 1];
@@ -56,22 +60,28 @@ const updateBalance = (balance: Balance, transaction: Transaction): Balance => {
   if (transaction.type === 'BALANCE_ADJUSTMENT') {
     accountsUpdate = { [account]: amount };
   } else if (transaction.type === 'INCOME' || transaction.type === 'EXPENSE') {
-    accountsUpdate = { [account]: balance.accounts[account] + amount };
+    accountsUpdate = { [account]: safeSum(balance.accounts[account], amount) };
   } else if (transaction.type === 'TRANSFER') {
     const { destinationAccount, destinationAmount } = transaction;
-    const currentSourceAmount = balance.accounts[account];
-    const currentDestinationAmount = balance.accounts[destinationAccount];
     accountsUpdate = {
-      [account]: currentSourceAmount + amount,
-      [destinationAccount]: currentDestinationAmount + destinationAmount,
+      [account]: safeSum(balance.accounts[account], amount),
+      [destinationAccount]: safeSum(
+        balance.accounts[destinationAccount],
+        destinationAmount,
+      ),
     };
   }
 
   const accounts = { ...balance.accounts, ...accountsUpdate };
-  const total = Object.values(accounts).reduce((a, b) => a + b, 0);
+  const total = Object.values(accounts).reduce(safeSum, 0);
   return {
-    date: transaction.date,
+    date: Date.parse(transaction.date),
     accounts,
     total,
   };
+};
+
+// safeSum allows to reduce floating point errors
+const safeSum = (a: number, b: number) => {
+  return (a * 100 + b * 100) / 100;
 };
