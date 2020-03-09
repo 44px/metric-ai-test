@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/metric-ai-test/static/css/main.56fc3dbe.chunk.css",
+    "main.js": "/metric-ai-test/static/js/main.af395cbd.chunk.js",
+    "main.js.map": "/metric-ai-test/static/js/main.af395cbd.chunk.js.map",
+    "runtime-main.js": "/metric-ai-test/static/js/runtime-main.7b9365a1.js",
+    "runtime-main.js.map": "/metric-ai-test/static/js/runtime-main.7b9365a1.js.map",
+    "static/css/2.c6231af7.chunk.css": "/metric-ai-test/static/css/2.c6231af7.chunk.css",
+    "static/js/2.12557226.chunk.js": "/metric-ai-test/static/js/2.12557226.chunk.js",
+    "static/js/2.12557226.chunk.js.map": "/metric-ai-test/static/js/2.12557226.chunk.js.map",
+    "index.html": "/metric-ai-test/index.html",
+    "precache-manifest.bd061314dea87d83bb73a9c10b543e3d.js": "/metric-ai-test/precache-manifest.bd061314dea87d83bb73a9c10b543e3d.js",
+    "service-worker.js": "/metric-ai-test/service-worker.js",
+    "static/css/2.c6231af7.chunk.css.map": "/metric-ai-test/static/css/2.c6231af7.chunk.css.map",
+    "static/css/main.56fc3dbe.chunk.css.map": "/metric-ai-test/static/css/main.56fc3dbe.chunk.css.map",
+    "static/js/2.12557226.chunk.js.LICENSE.txt": "/metric-ai-test/static/js/2.12557226.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b9365a1.js",
+    "static/css/2.c6231af7.chunk.css",
+    "static/js/2.12557226.chunk.js",
+    "static/css/main.56fc3dbe.chunk.css",
+    "static/js/main.af395cbd.chunk.js"
+  ]
+}
