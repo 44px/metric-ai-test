@@ -21,6 +21,7 @@ export const DatePicker: React.FunctionComponent<Props> = ({
       onChange(`${format(date, FORMAT)}`);
     }
   };
+  const today = new Date();
 
   return (
     <DayPickerInput
@@ -28,7 +29,12 @@ export const DatePicker: React.FunctionComponent<Props> = ({
       format={FORMAT}
       parseDate={parseDate}
       formatDate={formatDate}
-      placeholder={`${format(new Date(), FORMAT)}`}
+      placeholder={`${format(today, FORMAT)}`}
+      dayPickerProps={{
+        disabledDays: {
+          after: today,
+        },
+      }}
       onDayChange={onDayChange}
     />
   );
