@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e3b63ac8406ed2fe4d92924751bf8a12",
+    "revision": "faceadceba8a5d9ad4829b1c227fe8a0",
     "url": "/metric-ai-test/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/metric-ai-test/static/css/2.c6231af7.chunk.css"
   },
   {
-    "revision": "d982bf581f8e5a323c0a",
+    "revision": "ae583743168b5405007e",
     "url": "/metric-ai-test/static/css/main.56fc3dbe.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/metric-ai-test/static/js/2.12557226.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d982bf581f8e5a323c0a",
-    "url": "/metric-ai-test/static/js/main.af395cbd.chunk.js"
+    "revision": "ae583743168b5405007e",
+    "url": "/metric-ai-test/static/js/main.7638f049.chunk.js"
   },
   {
     "revision": "47c0d78e328c0ca94234",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/metric-ai-test/precache-manifest.bd061314dea87d83bb73a9c10b543e3d.js"
+  "/metric-ai-test/precache-manifest.4368e7c79869add5a88f9030401b96c9.js"
 );
 
 self.addEventListener('message', (event) => {
