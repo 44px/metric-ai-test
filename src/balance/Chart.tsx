@@ -38,6 +38,8 @@ export const Chart: React.FunctionComponent<Props> = ({ data }) => {
         />
         <YAxis
           type="number"
+          scale="linear"
+          domain={[0, 'dataMax + 1000']}
           interval="preserveStartEnd"
           tickFormatter={formatAmount}
         />
